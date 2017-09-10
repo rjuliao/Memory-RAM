@@ -1,0 +1,26 @@
+library ieee;
+use std_logic_1164.all;
+use std_logic_arith.all;
+use std_logic_unsigned.all;
+
+entity RAM is
+generic(
+	dim: integer := 256;
+	bdim: integer := 8
+);
+port(
+	dread: in std_logic;
+	dwrite: in std_logic;
+	dir: in std_logic_vector (bdim-1 downto 0);
+	data: in std_logic_vector (bdim-1 downto 0)
+);
+end RAM;
+
+--The process of the RAM
+architecture behaviorRAM of RAM if
+type ram_v is array (0 to dim - 1) of
+	std_logic_vector (bdim-1 downto 0);
+signal temp_ram: ram_v;
+begin
+
+end behaviorRAM;
